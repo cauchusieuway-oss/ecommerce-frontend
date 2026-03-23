@@ -13,18 +13,16 @@ function ShopDashboard() {
     const createShop = async () => {
         const res = await api.post("/shops", {name});
         setShop(res.data);
-    }
+    };
+
+    const selectShop = (shopId) => {
+        localStorage.setItem("shopId", shopId);
+        window.location.href = "/dashboard";
+    };
 
     return (
         <div>
             <h2>My Shops</h2>
-
-            {shops.map(s => (
-                <div key={s.id} className={"border p-4 mb-2"}>
-                    <h3>{s.name}</h3>
-                    <p>ID: {s.id}</p>
-                </div>
-            ))}
 
             <input
                 placeholder="Shop name"
@@ -33,6 +31,20 @@ function ShopDashboard() {
 
             <button onClick={createShop}>
                 Create Shop
+            </button>
+
+            {shops.map(s => (
+                <div key={s.id} className={"border p-4 mb-2"}>
+                    <h3>{s.name}</h3>
+                    <p>ID: {s.id}</p>
+                </div>
+            ))}
+
+            <button
+                onClick={() => selectShop(s.id)}
+                className="bg-black text-white px-3 py-1 mt-2"
+                >
+                Enter Shop
             </button>
         </div>
     );

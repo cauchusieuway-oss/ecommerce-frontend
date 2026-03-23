@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import {CartProvider} from "./context/CartContext";
 import OrderDetailPage from "./pages/OrderDetailPage";
 import ShopDashboard from "./pages/ShopDashboard";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
   return(
@@ -22,7 +23,8 @@ function App() {
                       <Route path="/create" element={<CreateProductPage/>} />
                       <Route path="/orders" element={<OrderPage/>} />
                       <Route path="/orders/:id" element={<OrderDetailPage/>} />
-                      <Route path="dashboard" element={<ShopDashboard/>} />
+                      <Route path="dashboardshop" element={<ShopDashboard/>} />
+                      <Route path="dashboard" element={<DashboardPage/>} />
                   </Routes>
               </div>
           </BrowserRouter>
