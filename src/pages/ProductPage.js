@@ -7,7 +7,7 @@ function ProductPage() {
     const { addToCart } = useCart();
 
     useEffect(() => {
-        api.get("/products?shopId=1").then((res) => setProducts(res.data));
+        api.get("/products").then((res) => setProducts(res.data));
     }, []);
 
     return(
