@@ -1,5 +1,5 @@
-import axios from "axios";
+import api from "./api";
 
 export const register = (date) => {
-    return axios.post(`/auth/register`,date);
+    return api.post(`/auth/register`,date);
 };
