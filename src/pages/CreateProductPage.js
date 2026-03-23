@@ -4,7 +4,7 @@ import api from "../api/api";
 function CreateProductPage() {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
+    // const [imageUrl, setImageUrl] = useState("");
     const [shopId, setShopId] = useState("");
     const [file, setFile] = useState(null);
 
