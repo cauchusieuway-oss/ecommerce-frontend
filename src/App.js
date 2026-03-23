@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import Register from "./pages/Register";
 import ProductPage from "./pages/ProductPage";
 import CreateProductPage from "./pages/CreateProductPage";
 import OrderPage from "./pages/OrderPage";
@@ -17,7 +16,6 @@ function App() {
               <div className="p-4">
                   <Routes>
                       <Route path="/" element={<LoginPage/>} />
-                      <Route path="/register" element={<Register/>} />
                       <Route path="/products" element={<ProductPage/>} />
                       <Route path="/create" element={<CreateProductPage/>} />
                       <Route path="/orders" element={<OrderPage/>} />
