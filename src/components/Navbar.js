@@ -15,6 +15,7 @@ function Navbar() {
                     <Link to="/">Home</Link>
                     <Link to="/products">Products</Link>
                     <Link to="/dashboard">Dashboard</Link>
+                    <Link to="/cart">Cart</Link>
                     <button onClick={() => setOpen(true)}>
                         Cart ({cart.length})
                     </button>

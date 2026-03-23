@@ -9,6 +9,7 @@ import {CartProvider} from "./context/CartContext";
 import OrderDetailPage from "./pages/OrderDetailPage";
 import ShopDashboard from "./pages/ShopDashboard";
 import DashboardPage from "./pages/DashboardPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return(
@@ -23,8 +24,9 @@ function App() {
                       <Route path="/create" element={<CreateProductPage/>} />
                       <Route path="/orders" element={<OrderPage/>} />
                       <Route path="/orders/:id" element={<OrderDetailPage/>} />
-                      <Route path="dashboardshop" element={<ShopDashboard/>} />
-                      <Route path="dashboard" element={<DashboardPage/>} />
+                      <Route path="/dashboardshop" element={<ShopDashboard/>} />
+                      <Route path="/dashboard" element={<DashboardPage/>} />
+                      <Route path="/cart" element={<CartPage/>} />
                   </Routes>
               </div>
           </BrowserRouter>
