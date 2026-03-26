@@ -48,6 +48,10 @@ function CartPage() {
                 >
                 Checkout
             </button>
+                    
+            <button onClick={clearCart}>
+                Clear Cart
+            </button>
         </div>
     );
 }
