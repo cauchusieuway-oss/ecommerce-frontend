@@ -39,10 +39,10 @@ function ShopDashboard() {
                     <p>ID: {s.id}</p>
 
                     <button
-                    onClick={() => selectShop(s.id)}
-                    className="bg-black text-white px-3 py-1 mt-2"
+                        onClick={() => selectShop(s.id)}
+                        className="bg-black text-white px-3 py-1 mt-2"
                     >
-                    Enter Shop
+                        Enter Shop
                     </button>
                 </div>
             ))}

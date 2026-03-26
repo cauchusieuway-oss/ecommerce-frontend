@@ -15,6 +15,11 @@ function DashboardPage() {
         }
     };
 
+    const deleteProduct = async (id) => {
+        await api.delete(`/products/${id}`);
+        loadProducts();
+    };
+
     useEffect(() => {
         if (!shopId) {
             alert("No shop selected!");
@@ -22,12 +27,7 @@ function DashboardPage() {
             return;
         }
         loadProducts();
-    }, []);
-
-    const deleteProduct = async (id) => {
-        await api.delete(`/products/${id}`);
-        loadProducts();
-    };
+    }, [shopId, loadProducts]);
 
     return(
         <div className="p-6">
@@ -44,6 +44,7 @@ function DashboardPage() {
                     <div key={p.id} className="border p-4 rounded shadow">
                         <img
                             src={p.imageUrl}
+                            alt="product"
                             className="w-full h-40 object-cover mb-2"
                         />
 
