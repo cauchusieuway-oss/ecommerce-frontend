@@ -12,13 +12,23 @@ function CartPage() {
             quantity: 1
         }));
 
-        await api.post("/orders/checkout", {
-            shopId,
-            items
-        });
+            //tạo order trước
+            const orderRes = await api.post("/orders/checkout", {
+                shopId,
+                items
+            });
 
-        alert("Order success!");
-        clearCart();
+            const orderId = orderRes.data.id;
+
+            const total = cart.reduce((sum, i) => sum + i.price, 0);
+
+            //gọi payment kèm orderId
+        const res = await api.post(
+            `/payment?amount=${total * 100}&orderId=${orderId}`
+        );
+
+            //redirect sang stripe
+            window.location.href = res.data;
     };
 
     return (
