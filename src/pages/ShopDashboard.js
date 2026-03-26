@@ -37,15 +37,15 @@ function ShopDashboard() {
                 <div key={s.id} className={"border p-4 mb-2"}>
                     <h3>{s.name}</h3>
                     <p>ID: {s.id}</p>
+
+                    <button
+                    onClick={() => selectShop(s.id)}
+                    className="bg-black text-white px-3 py-1 mt-2"
+                    >
+                    Enter Shop
+                    </button>
                 </div>
             ))}
-
-            <button
-                onClick={() => selectShop(s.id)}
-                className="bg-black text-white px-3 py-1 mt-2"
-                >
-                Enter Shop
-            </button>
         </div>
     );
 }
